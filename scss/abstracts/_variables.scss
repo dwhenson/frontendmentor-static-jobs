@@ -3,9 +3,13 @@
 
 :root {
 	/* Colors */
+	--clr-primary-100: hsla(180, 29%, 50%, 1);
 	--clr-neutral-100: hsla(0, 0%, 100%, 1);
-	--clr-neutral-300: hsla(0, 0%, 19%, 1);
-	--clr-neutral-400: hsla(0, 0%, 0%, 1);
+	--clr-neutral-200: hsla(180, 52%, 96%, 1);
+	--clr-neutral-300: hsla(180, 31%, 95%, 1);
+	--clr-neutral-400: hsla(180, 8%, 52%, 1);
+	--clr-neutral-350: hsla(180, 14%, 20%, 1);
+	--clr-neutral-460: hsla(0, 0%, 0%, 1);
 
 	/* Spacing */
 	--spacer: 1rem;
@@ -14,11 +18,7 @@
 	--step--1: clamp(0.84rem, 0.78rem + 0.34vw, 1.08rem);
 	--step-0: clamp(1.13rem, 0.98rem + 0.71vw, 1.63rem);
 	--step-1: clamp(1.5rem, 1.23rem + 1.34vw, 2.44rem);
-	--step-2: clamp(2rem, 1.53rem + 2.37vw, 3.66rem);
-	--step-3: clamp(2.66rem, 1.86rem + 4.03vw, 5.48rem);
-	--step-4: clamp(3.55rem, 2.22rem + 6.68vw, 8.23rem);
-	--step-5: clamp(4.74rem, 2.56rem + 10.86vw, 12.34rem);
 
 	/* Font-families */
-	--ff-body: "inter", sans-serif;
+	--ff-body: "Spartan", sans-serif;
 }
