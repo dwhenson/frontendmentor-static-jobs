@@ -416,7 +416,7 @@ FodyWeavers.xsd
 ### CodeKit
 # General CodeKit files to ignore
 config.codekit
-config.codekit3
+.config.codekit3
 
 # CodeKit Patch
 */codekit-config.json
@@ -440,6 +440,7 @@ node_modules/
 .prettierrc
 .styleintrc
 .stylelintrc.json
+
 
 
 
