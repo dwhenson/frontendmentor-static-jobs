@@ -2,10 +2,6 @@
 
 .split {
 	display: flex;
-	flex-direction: column;
 	gap: var(--spacer);
-
-	@include respond-to("medium") {
-		flex-direction: row;
-	}
+	flex-wrap: wrap;
 }

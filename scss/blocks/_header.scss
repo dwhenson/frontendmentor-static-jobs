@@ -1,0 +1,8 @@
+/* 	Header
+   	================================================== */
+.header {
+	grid-column: 1 / -1;
+	padding-top: 7rem;
+	background-color: var(--clr-primary-100);
+	background-image: url(../../images/bg-header-desktop.svg);
+}
