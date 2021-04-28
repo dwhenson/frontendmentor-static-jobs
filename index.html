@@ -16,8 +16,11 @@
 
 	<body class="center-content flow-section">
 		<header class="header">
-			<div class="filters container">
-				<button type="button">Clear</button>
+			<div class="container">
+				<div class="filter container">
+					<div class="filters"></div>
+					<button type="button">Clear</button>
+				</div>
 			</div>
 		</header>
 		<main class="container flow-section">
@@ -28,31 +31,41 @@
 					<p class="highlight">New!</p>
 					<p class="promoted">Featured</p>
 				</div>
-				<h3>Senior Frontend Developer</h3>
+				<h3><a href="/">Senior Frontend Developer</a></h3>
 				<div class="split">
 					<p class="age">1d ago</p>
 					<p class="time">Full Time</p>
 					<p class="location">USA only</p>
 				</div>
 				<form class="form split">
-					<fieldset>
+					<fieldset class="split">
 						<legend class="visually-hidden">Level</legend>
-						<label for="senior">Senior</label>
-						<input id="senior" type="checkbox" />
+						<label for="senior"
+							>Senior
+							<input id="senior" type="checkbox" />
+						</label>
 					</fieldset>
-					<fieldset>
+					<fieldset class="split">
 						<legend class="visually-hidden">Role</legend>
-						<label for="frontend">frontend</label>
-						<input id="frontend" type="checkbox" />
+						<label for="frontend"
+							>Frontend
+							<input id="frontend" type="checkbox" />
+						</label>
 					</fieldset>
-					<fieldset>
+					<fieldset class="split">
 						<legend class="visually-hidden">Languages</legend>
-						<label for="html">HTML</label>
-						<input id="html" type="checkbox" />
-						<label for="css">CSS</label>
-						<input id="css" type="checkbox" />
-						<label for="javascript">JavaScript</label>
-						<input id="javascript" type="checkbox" />
+						<label for="html"
+							>HTML
+							<input id="html" type="checkbox" />
+						</label>
+						<label for="css"
+							>CSS
+							<input id="css" type="checkbox" />
+						</label>
+						<label for="javascript"
+							>JavaScript
+							<input id="javascript" type="checkbox" />
+						</label>
 					</fieldset>
 				</form>
 			</div>
