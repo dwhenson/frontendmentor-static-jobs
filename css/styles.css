@@ -97,8 +97,8 @@ select {
   /* Colors */
   --clr-primary-100: hsla(180, 29%, 50%, 1);
   --clr-neutral-100: hsla(0, 0%, 100%, 1);
-  --clr-neutral-200: hsla(180, 52%, 96%, 1);
-  --clr-neutral-300: hsla(180, 31%, 95%, 1);
+  --clr-neutral-200: hsla(180, 31%, 95%, 1);
+  --clr-neutral-300: hsla(180, 52%, 96%, 1);
   --clr-neutral-400: hsla(180, 8%, 52%, 1);
   --clr-neutral-350: hsla(180, 14%, 20%, 1);
   --clr-neutral-460: hsla(0, 0%, 0%, 1);
@@ -117,6 +117,16 @@ select {
 body {
   font-family: var(--ff-body);
   font-size: var(--step-0);
+  background-color: var(--clr-neutral-300);
+}
+
+h2 {
+  font-size: var(--step--1);
+  color: var(--clr-primary-100);
+}
+
+h3 {
+  font-size: var(--step-1);
 }
 
 /* ==================================================
@@ -140,11 +150,11 @@ body {
 
 /* Add vertical rhythm between sections */
 .flow-section > * + * {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 @media (min-width: 50em) {
   .flow-section > * + * {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
 }
 
@@ -211,145 +221,13 @@ body {
 /* ==================================================
    Blocks
    ================================================== */
-/* 	Main and Sub-sections
+/* 	Header
    	================================================== */
-/* Designed Section
-   ------------------- */
-.designed {
-  display: grid;
-  gap: 2rem;
-}
-.designed img {
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 50em) {
-  .designed img {
-    max-width: 180%;
-  }
-}
-@media (min-width: 65em) {
-  .designed img {
-    max-width: 200%;
-    transform: translateX(5rem);
-  }
-}
-@media (min-width: 50em) {
-  .designed {
-    grid-template-rows: 6rem auto auto 6rem;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 4rem 1rem;
-  }
-  .designed h2 {
-    grid-area: 1/1/2/-1;
-    margin-top: 2em;
-    text-align: center;
-  }
-  .designed .picture {
-    grid-area: 1/2/5/-1;
-  }
-  .designed .para-1 {
-    grid-area: 2/1/3/2;
-  }
-  .designed .para-2 {
-    grid-area: 3/1/4/2;
-  }
+header {
+  padding-top: 7rem;
+  background-color: var(--clr-primary-100);
+  background-image: url(../../images/bg-header-desktop.svg);
 }
 
-/* Infrastructure Section
-   ------------------- */
-.infrastructure {
-  color: var(--clr-neutral-100);
-}
-.infrastructure h2 {
-  color: var(--clr-neutral-100);
-}
-.infrastructure .grid {
-  display: grid;
-  grid-template-rows: repeat(3, auto);
-  align-items: center;
-}
-.infrastructure .grid img {
-  grid-area: 1/1/3/-1;
-  margin-right: auto;
-  margin-left: auto;
-}
-.infrastructure .grid .para-1 {
-  grid-area: 3/1/-1/-1;
-  padding-top: 1rem;
-  padding-bottom: 4rem;
-}
-.infrastructure .grid .background {
-  grid-area: 2/1/-1/2;
-  align-self: stretch;
-  width: 100vw;
-  border-radius: 0 5rem 0 5rem;
-  margin-left: calc(50% - 50vw);
-  background-color: var(--clr-primary-300);
-  background-image: url("../images/bg-pattern-circles.svg");
-  background-position: center -15rem;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-@media (min-width: 50em) {
-  .infrastructure .grid {
-    grid-template-rows: 6rem auto 6rem;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem 1rem;
-    background-size: 50%;
-  }
-  .infrastructure .grid img {
-    grid-area: 1/1/-1/2;
-    margin-top: 2rem;
-  }
-  .infrastructure .grid .para-1 {
-    grid-area: 2/2/3/-1;
-    padding-top: 4rem;
-  }
-  .infrastructure .grid .background {
-    grid-area: 2/1/3/-1;
-    background-position: -10rem -20rem;
-    background-size: 50%;
-  }
-}
-
-/* Free, open and simple
-   ------------------- */
-.free-open {
-  display: grid;
-  gap: 3rem;
-}
-.free-open img {
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 50em) {
-  .free-open img {
-    max-width: 180%;
-    transform: translateX(-15rem);
-  }
-}
-@media (min-width: 65em) {
-  .free-open img {
-    max-width: 200%;
-    transform: translateX(-25rem);
-  }
-}
-@media (min-width: 50em) {
-  .free-open {
-    grid-template-rows: 6rem auto auto 6rem;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 4rem 1rem;
-  }
-  .free-open .picture {
-    grid-area: 1/1/5/2;
-  }
-  .free-open .para-1 {
-    grid-area: 2/2/3/3;
-  }
-  .free-open .para-2 {
-    grid-area: 3/2/4/3;
-  }
-}
+/* 	Job Card
+   	================================================== */
