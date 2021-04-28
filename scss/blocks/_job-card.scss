@@ -8,6 +8,7 @@
 	background-color: var(--clr-neutral-100);
 	padding-top: clamp(0.5rem, 2.5%, 2rem);
 	padding-bottom: clamp(0.5rem, 2.5%, 2rem);
+	align-items: center;
 
 	@include respond-to("medium") {
 		grid-auto-flow: column;
@@ -24,6 +25,32 @@
 			max-width: 100%;
 			grid-area: 1 / 1 / -1 / 2;
 		}
+	}
+
+	.highlight,
+	.promoted {
+		font-size: var(--step--1);
+		text-transform: uppercase;
+		font-weight: 700;
+		padding: 0.5em 0.75em;
+		border-radius: 1em;
+		line-height: 0.73rem;
+		display: inline-block;
+		color: var(--clr-neutral-100);
+	}
+
+	.highlight {
+		background-color: var(--clr-primary-100);
+	}
+
+	.promoted {
+		background-color: var(--clr-neutral-600);
+	}
+
+	.age,
+	.time,
+	.location {
+		color: var(--clr-neutral-400);
 	}
 
 	.form {
