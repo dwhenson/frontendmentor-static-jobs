@@ -9,11 +9,12 @@
 	padding-top: clamp(0.5rem, 2.5%, 2rem);
 	padding-bottom: clamp(0.5rem, 2.5%, 2rem);
 	align-items: center;
+	box-shadow: 0 1em 1em hsla(180, 14%, 20%, 0.2);
 
 	@include respond-to("medium") {
 		grid-auto-flow: column;
 		grid-template-rows: repeat(3, auto);
-		grid-template-columns: auto 1fr 1fr;
+		grid-template-columns: auto auto 1fr;
 	}
 
 	.logo {
