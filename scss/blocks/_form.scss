@@ -1,0 +1,38 @@
+/* Form
+   ------------------- */
+.form {
+	gap: 0.5rem;
+
+	@include respond-to("medium") {
+		justify-content: flex-end;
+	}
+
+	fieldset {
+		border: none;
+		padding: 0;
+	}
+
+	label {
+		background-color: hsla(180, 29%, 50%, 0.15);
+		padding: 0.5em 0.75em;
+		color: var(--clr-primary-100);
+		font-weight: 700;
+		line-height: 1rem;
+		font-size: var(--step--1);
+		position: relative;
+		cursor: pointer;
+
+		&:hover {
+			background-color: var(--clr-primary-100);
+			color: var(--clr-neutral-100);
+		}
+	}
+
+	input {
+		position: absolute;
+		left: 0;
+		width: calc(90%);
+		cursor: pointer;
+		opacity: 0;
+	}
+}
