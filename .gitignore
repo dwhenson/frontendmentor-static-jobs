@@ -440,6 +440,7 @@ node_modules/
 .prettierrc
 .styleintrc
 .stylelintrc.json
+prettierrc.json
 
 
 

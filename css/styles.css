@@ -100,8 +100,8 @@ select {
   --clr-neutral-200: hsla(180, 31%, 95%, 1);
   --clr-neutral-300: hsla(180, 52%, 96%, 1);
   --clr-neutral-400: hsla(180, 8%, 52%, 1);
-  --clr-neutral-350: hsla(180, 14%, 20%, 1);
-  --clr-neutral-460: hsla(0, 0%, 0%, 1);
+  --clr-neutral-500: hsla(180, 14%, 20%, 1);
+  --clr-neutral-600: hsla(0, 0%, 0%, 1);
   /* Spacing */
   --spacer: 1rem;
   /* Font sizes */
@@ -115,9 +115,9 @@ select {
 /* Base Styles
    ================================================== */
 body {
+  background-color: var(--clr-neutral-300);
   font-family: var(--ff-body);
   font-size: var(--step-0);
-  background-color: var(--clr-neutral-300);
 }
 
 h2 {
@@ -125,8 +125,17 @@ h2 {
   color: var(--clr-primary-100);
 }
 
-h3 {
+main {
+  margin-bottom: 6rem;
+}
+
+h3 a {
   font-size: var(--step-1);
+  text-decoration: none;
+  color: var(--clr-neutral-500);
+}
+h3 a:hover {
+  color: var(--clr-primary-100);
 }
 
 /* ==================================================
@@ -211,6 +220,7 @@ h3 {
   display: flex;
   gap: var(--spacer);
   flex-wrap: wrap;
+  align-items: baseline;
 }
 
 /* ==================================================
@@ -223,38 +233,131 @@ h3 {
   padding-top: 7rem;
   background-color: var(--clr-primary-100);
   background-image: url(../../images/bg-header-desktop.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 2rem;
 }
 
 /* 	Job Card
    	================================================== */
-.posting {
+.posting > li {
   display: grid;
   grid-template-rows: repeat(4, auto);
+  align-items: center;
   gap: var(--spacer);
-  background-color: var(--clr-neutral-100);
   padding-top: clamp(0.5rem, 2.5%, 2rem);
   padding-bottom: clamp(0.5rem, 2.5%, 2rem);
+  box-shadow: 0 1em 1em rgba(44, 58, 58, 0.2);
+  background-color: var(--clr-neutral-100);
 }
 @media (min-width: 50em) {
-  .posting {
-    grid-auto-flow: column;
+  .posting > li {
     grid-template-rows: repeat(3, auto);
-    grid-template-columns: auto 1fr 1fr;
+    grid-template-columns: auto auto 1fr;
+    grid-auto-flow: column;
   }
 }
-.posting .logo {
-  margin-top: -1.5rem;
+.posting > li .logo {
   max-width: 3rem;
+  margin-top: -1.5rem;
 }
 @media (min-width: 50em) {
-  .posting .logo {
-    margin-top: 0;
-    max-width: 100%;
+  .posting > li .logo {
     grid-area: 1/1/-1/2;
+    max-width: 100%;
+    margin-top: 0;
   }
 }
+.posting > li .highlight,
+.posting > li .promoted {
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  border-radius: 1em;
+  font-size: var(--step--1);
+  font-weight: 700;
+  line-height: 0.73rem;
+  text-transform: uppercase;
+  color: var(--clr-neutral-100);
+}
+.posting > li .highlight {
+  background-color: var(--clr-primary-100);
+}
+.posting > li .promoted {
+  background-color: var(--clr-neutral-600);
+}
+.posting > li .age,
+.posting > li .time,
+.posting > li .location {
+  color: var(--clr-neutral-400);
+}
 @media (min-width: 50em) {
-  .posting .form {
+  .posting > li .form {
     grid-area: 1/-2/-1/-1;
   }
+}
+
+/* Form
+   ------------------- */
+.form {
+  gap: 0.5rem;
+}
+@media (min-width: 50em) {
+  .form {
+    justify-content: flex-end;
+  }
+}
+.form fieldset {
+  padding: 0;
+  border: none;
+}
+.form label {
+  position: relative;
+  padding: 0.5em 0.75em;
+  background-color: rgba(91, 164, 164, 0.15);
+  font-size: var(--step--1);
+  font-weight: 700;
+  line-height: 1rem;
+  color: var(--clr-primary-100);
+  cursor: pointer;
+}
+.form label:hover {
+  background-color: var(--clr-primary-100);
+  color: var(--clr-neutral-100);
+}
+.form label:focus-visible {
+  outline: 3px dotted red;
+  outline-offset: 0.25rem;
+}
+.form input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 90%;
+  height: 80%;
+  cursor: pointer;
+}
+
+/* 	Filter
+   	================================================== */
+.filter {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: var(--clr-neutral-100);
+  transform: translateY(50%);
+  box-shadow: 0 1em 1em rgba(44, 58, 58, 0.2);
+  display: none;
+}
+.filter button {
+  margin-left: auto;
+  border: none;
+  color: var(--clr-primary-100);
+  font-size: var(--step--1);
+  background-color: transparent;
+  cursor: pointer;
+}
+.filter button:hover {
+  text-decoration: underline;
 }
