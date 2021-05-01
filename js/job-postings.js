@@ -1,7 +1,6 @@
 import { postingsData } from "./postings-data.js";
 
 const main = document.querySelector("main");
-// const fliterContainer = document.querySelector(".filter");
 
 function renderPostings(postings) {
 	main.innerHTML = postings
@@ -54,18 +53,20 @@ function renderPostings(postings) {
 }
 
 const filters = [];
+const checker = (array, target) => target.every((value) => array.includes(value));
 
-function filterPosts() {
-	// filters.forEach(function (filter) {
-	// 	postingsData.forEach(function (post) {
-	// 		const values = Object.values(post);
-	// 		if (values.includes(filter)) {
-	// 			filteredPosts.push(post);
-	// 		}
-	// 	});
-	// });
-	// renderPostings(filteredPosts);
-	console.log(filters);
+// FIX render logic as currently returning || results and I need &&
+// CHECK or is the problem that results are returning twice?
+
+function filterPostings() {
+	const filterdPostingsData = [];
+	postingsData.forEach(function (post) {
+		const values = Object.values(post).flat();
+		if (checker(values, filters)) {
+			filterdPostingsData.push(post);
+		}
+	});
+	renderPostings(filterdPostingsData);
 }
 
 function updateFilters(event) {
@@ -75,7 +76,7 @@ function updateFilters(event) {
 	} else {
 		filters.push(event.target.id);
 	}
-	filterPosts();
+	filterPostings();
 }
 
 document.addEventListener("change", updateFilters);
