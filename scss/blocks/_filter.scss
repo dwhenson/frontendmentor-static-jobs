@@ -1,7 +1,6 @@
 /* 	Filter
    	================================================== */
 
-// TODO: Change label style and input style to be classes
 .filters {
 	display: none;
 	align-items: center;
@@ -21,7 +20,6 @@
 		padding-right: 3.5em;
 	}
 
-	// FIX: Position of svg X inside svg
 	svg {
 		position: absolute;
 		right: 0;

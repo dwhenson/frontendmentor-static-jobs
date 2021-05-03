@@ -438,9 +438,9 @@ node_modules/
 .eslint
 .postcss-sorting.json
 .prettierrc
+.prettierrc.json
 .styleintrc
 .stylelintrc.json
-prettierrc.json
 *.todo
 
 
