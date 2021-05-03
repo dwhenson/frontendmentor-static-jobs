@@ -1,21 +1,45 @@
 /* 	Filter
    	================================================== */
-.filter {
-	display: flex;
-	align-items: center;
-	padding-top: 2rem;
-	padding-bottom: 2rem;
-	background-color: var(--clr-neutral-100);
-	transform: translateY(50%);
-	box-shadow: 0 1em 1em hsla(180, 14%, 20%, 0.2);
+
+// TODO: Change label style and input style to be classes
+.filters {
 	display: none;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+	width: 100%;
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+	box-shadow: 0 1em 1em hsla(180, 14%, 20%, 0.2);
+	background-color: var(--clr-neutral-100);
+	transform: translateY(-50%);
+
+	label {
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding-right: 3.5em;
+	}
+
+	// FIX: Position of svg X inside svg
+	svg {
+		position: absolute;
+		right: 0;
+		width: 2.5em;
+		height: 100%;
+		background-color: var(--clr-primary-100);
+		pointer-events: none;
+	}
+
+	label:hover svg {
+		background-color: var(--clr-neutral-600);
+	}
 
 	button {
-		margin-left: auto;
 		border: none;
-		color: var(--clr-primary-100);
-		font-size: var(--step--1);
 		background-color: transparent;
+		font-size: var(--step--1);
+		color: var(--clr-primary-100);
 		cursor: pointer;
 
 		&:hover {

@@ -1,12 +1,14 @@
 import { postingsData } from "./postings-data.js";
 
-const main = document.querySelector("main");
+const postingContainer = document.querySelector(".postings");
+const activeFilters = document.querySelector(".active-filters");
+const filterContainer = document.querySelector(".filters");
 
 function renderPostings(postings) {
-	main.innerHTML = postings
+	postingContainer.innerHTML = postings
 		.map(function (post) {
-			return `<ul class="posting">
-				<li class="container">
+			return `
+				<li class="card container">
 					<img class="logo" src="${post.logo}" alt="${post.company} Logo" />
 					<div class="split">
 						<h2>${post.company}</h2>
@@ -55,8 +57,23 @@ function renderPostings(postings) {
 const filters = [];
 const checker = (array, target) => target.every((value) => array.includes(value));
 
-// FIX render logic as currently returning || results and I need &&
-// CHECK or is the problem that results are returning twice?
+function renderFilters(filtersToRender) {
+	if (filtersToRender.length >= 1) {
+		filterContainer.style.display = "flex";
+	} else {
+		filterContainer.style.display = "none";
+	}
+
+	activeFilters.innerHTML = filtersToRender
+		.map(function (filter) {
+			return `<label for="active-${filter}"
+				>${filter}
+				<input data-filter="HTML" id="${filter}" type="checkbox" />
+				<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><path fill="#FFF" fill-rule="evenodd" d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"/></svg>
+			</label>`;
+		})
+		.join("");
+}
 
 function filterPostings() {
 	const filterdPostingsData = [];
@@ -77,6 +94,7 @@ function updateFilters(event) {
 		filters.push(event.target.id);
 	}
 	filterPostings();
+	renderFilters(filters);
 }
 
 document.addEventListener("change", updateFilters);

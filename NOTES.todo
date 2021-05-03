@@ -8,14 +8,24 @@ STEPS (1):
 	# Set up filter
 	✔ Add event listener to document to listen for 'changes' @done (21-04-30 15:22)
 	✔	Create an empty array to hold filter values @done (21-04-30 15:24)
-	☐	On change, get data-xxx and value
-	☐	Check if xxx and value is in array, if so remove, if not add
-	☐	Compare the filter array against the jobs array, and filter only matches???
-	☐	Pass the new matched array to the render function and render
-	☐	Set all checkboxes with the same value as checked?
+	✔	On change, get data-xxx and value @done (21-05-01 14:50)
+	✔	Check if xxx and value is in array, if so remove, if not add @done (21-05-01 14:50)
+	✔	Compare the filter array against the jobs array, and filter only matches??? @done (21-05-01 14:50)
+	✔	Pass the new matched array to the render function and render @done (21-05-01 14:50)
+	☐	Set all checkboxes with the same value as checked? Need to control with JS.
 
 	STEPS (3):
 	# Create filter UI
-	☐ Pass filter array to new render function
-	☐	Loop over array and create HTML required for top box (checkbox for each item)
+	✔ Pass filter array to new renderFilters function @done (21-05-02 08:18)
+	✔	ID element to insert filters to - fieldset? @done (21-05-02 08:18)
+	✔	Work out template literal @done (21-05-02 08:18)
+	✔	Check clear button reverts to initial state - removes all filters @done (21-05-02 16:30)
+	✔	Sort out header jank - swap to data- from id to avoid duplicates @done (21-05-02 16:30)
+	☐	Create buttons for each filter with 'remove' or uncheck? - render?
+
+	FINAL BITS:
+		☐	Refactor JS to focus on data-attributes not ids
+		☐	Refactor CSS to avoid label repetition
+		☐	Check todo list items
+		☐	Write read me
 

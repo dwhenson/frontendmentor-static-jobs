@@ -11,17 +11,16 @@
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 
-	<body class="center-content flow-section">
-		<header class="header">
-			<div class="container">
-				<div class="filter container">
-					<div class="filters"></div>
-					<button type="button">Clear</button>
-				</div
-			</div>
-		</header>
-		<main class="container flow-section">
-			<p>Fetching job postings....</p>
+	<body class="center-content">
+		<header class="header"></header>
+		<main class="container flow-content">
+			<form class="filters form container">
+				<fieldset class="active-filters split" aria-live="true"></fieldset>
+				<button>Clear</button>
+			</form>
+			<ul class="postings container flow-content" role="list">
+				<p>Fetching job postings....</p>
+			</ul>
 		</main>
 		<script src="js/job-postings.js" type="module"></script>
 	</body>

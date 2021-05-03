@@ -27,13 +27,9 @@
 			color: var(--clr-neutral-100);
 		}
 
-		&:focus-visible {
-			outline: 3px dotted red;
+		&:focus-within {
+			outline: 5px dotted var(--clr-primary-100);
 			outline-offset: 0.25rem;
-		}
-
-		&:focus:not(:focus-visible) {
-			// outline: transparent;
 		}
 	}
 
