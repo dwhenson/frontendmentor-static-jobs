@@ -6,7 +6,7 @@ const filterContainer = document.querySelector(".filters");
 
 function renderPostings(postings) {
 	postingContainer.innerHTML = postings
-		.map(function (post) {
+		.map(function (post, index) {
 			return `
 				<li class="card container">
 					<img class="logo" src="${post.logo}" alt="${post.company} Logo" />
@@ -24,25 +24,25 @@ function renderPostings(postings) {
 					<form class="form split">
 						<fieldset class="split">
 							<legend class="visually-hidden">Filter by: Level</legend>
-							<label for="${post.level}"
+							<label for="${post.level}-${index}"
 								>${post.level}
-								<input data-level="${post.level}" id="${post.level}" type="checkbox" />
+								<input data-level="${post.level}" id="${post.level}-${index}" type="checkbox" />
 							</label>
 						</fieldset>
 						<fieldset class="split">
 							<legend class="visually-hidden">Filter by: Role</legend>
-							<label for="${post.role}"
+							<label for="${post.role}-${index}"
 								>${post.role}
-								<input data-role="${post.role}" id="${post.role}" type="checkbox" />
+								<input data-role="${post.role}" id="${post.role}-${index}" type="checkbox" />
 							</label>
 						</fieldset>
 						<fieldset class="split">
 							<legend class="visually-hidden">Filter by: Languages</legend>
 							${post.languages
 								.map(function (language) {
-									return `<label for="${language}"
+									return `<label for="${language}-${index}"
 									>${language}
-									<input data-languages="${language}" id="${language}" type="checkbox" />
+									<input data-languages="${language}" id="${language}-${index}" type="checkbox" />
 								</label>`;
 								})
 								.join("")}
@@ -65,11 +65,10 @@ function renderFilters(filtersToRender) {
 	}
 
 	activeFilters.innerHTML = filtersToRender
-		.map(function (filter) {
-			// prettier-ignore
-			return /* html */`<label for="active-${filter}"
+		.map(function (filter, index) {
+			return `<label for="active-${filter}-${index}"
 				>${filter}
-				<input data-filter="HTML" id="${filter}" type="checkbox" />
+				<input data-filter="${filter}" id="active-${filter}-${index}" type="checkbox" />
 				<img src="./images/icon-remove.svg" alt="remove">
 			</label>`;
 		})
@@ -88,11 +87,12 @@ function filterPostings() {
 }
 
 function updateFilters(event) {
-	if (filters.includes(event.target.id)) {
-		const index = filters.indexOf(event.target.id);
+	const filter = Object.entries(event.target.dataset)[0][1];
+	if (filters.includes(filter)) {
+		const index = filters.indexOf(filter);
 		filters.splice(index, 1);
 	} else {
-		filters.push(event.target.id);
+		filters.push(filter);
 	}
 	filterPostings();
 	renderFilters(filters);
