@@ -95,7 +95,7 @@ function renderFilters(filtersToRender) {
 		.map(function (filter, index) {
 			return `<label for="active-${filter}-${index}"
 				>${filter}
-				<input data-filter="${filter}" id="active-${filter}-${index}" type="checkbox" />
+				<input data-filter="${filter}" id="active-${filter}-${index}" type="checkbox" checked/>
 				<img src="./images/icon-remove.svg" alt="remove">
 			</label>`;
 		})
@@ -119,6 +119,19 @@ function filterPostings(arrayToCheck) {
 }
 
 /**
+ * Check or uncheck the checkboxes of the values being filtered
+ * @param      {String}  values  The array of values being filtered
+ */
+function checkCheckboxes(values) {
+	values.forEach(function (value) {
+		const inputs = document.querySelectorAll(`input[id^="${value}"]`);
+		inputs.forEach(function (input) {
+			input.checked ? (input.checked = false) : (input.checked = true);
+		});
+	});
+}
+
+/**
  * Create an array of values to filter jobs against
  * @param      {Object}  event   The event object
  */
@@ -132,6 +145,7 @@ function updateFilters(event) {
 	}
 	filterPostings(postingsData);
 	renderFilters(filters);
+	checkCheckboxes(filters);
 }
 
 /* ============  Inits and Event Listeners  =========== */
