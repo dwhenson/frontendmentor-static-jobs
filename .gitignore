@@ -34,6 +34,7 @@ Temporary Items
 
 # Workspace files are user-specific
 *.sublime-workspace
+*.sublime-project
 
 # Project files should be checked into the repository, unless a significant
 # proportion of contributors will probably not be using Sublime Text
@@ -416,7 +417,7 @@ FodyWeavers.xsd
 ### CodeKit
 # General CodeKit files to ignore
 config.codekit
-.config.codekit3
+config.codekit3
 
 # CodeKit Patch
 */codekit-config.json
@@ -434,14 +435,14 @@ node_modules/
 ## Personal additions 
 .nova/
 .editorconfig
-.eslintrc.js
 .eslint
+.eslintrc.js
 .postcss-sorting.json
 .prettierrc
 .prettierrc.json
 .styleintrc
 .stylelintrc.json
-*.todo
+notes.todo
 
 
 
