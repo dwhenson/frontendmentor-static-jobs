@@ -20,16 +20,16 @@
 		padding-right: 3.5em;
 	}
 
-	svg {
+	img {
 		position: absolute;
 		right: 0;
-		width: 2.5em;
 		height: 100%;
+		padding: 0.5em;
 		background-color: var(--clr-primary-100);
 		pointer-events: none;
 	}
 
-	label:hover svg {
+	label:hover img {
 		background-color: var(--clr-neutral-600);
 	}
 
