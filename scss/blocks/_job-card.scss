@@ -1,8 +1,6 @@
 /* 	Job Card
    	================================================== */
 
-// TODO add border on hovered card
-
 .card {
 	display: grid;
 	grid-template-rows: repeat(4, auto);
@@ -10,8 +8,15 @@
 	gap: var(--spacer);
 	padding-top: clamp(0.5rem, 2.5%, 2rem);
 	padding-bottom: clamp(0.5rem, 2.5%, 2rem);
+	border-left: 5px solid transparent;
 	box-shadow: 0 1em 1em hsla(180, 14%, 20%, 0.2);
 	background-color: var(--clr-neutral-100);
+	transition: border-color 200ms;
+
+	&:focus-within,
+	&:hover {
+		border-left: 5px solid var(--clr-primary-100);
+	}
 
 	@include respond-to("medium") {
 		grid-template-rows: repeat(3, auto);

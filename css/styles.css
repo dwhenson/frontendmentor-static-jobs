@@ -130,12 +130,13 @@ main {
   margin-bottom: 8rem;
 }
 
-h3 a {
+a {
+  transition: color 200ms;
   font-size: var(--step-1);
   text-decoration: none;
   color: var(--clr-neutral-500);
 }
-h3 a:hover {
+a:hover {
   color: var(--clr-primary-100);
 }
 
@@ -247,8 +248,13 @@ h3 a:hover {
   gap: var(--spacer);
   padding-top: clamp(0.5rem, 2.5%, 2rem);
   padding-bottom: clamp(0.5rem, 2.5%, 2rem);
+  border-left: 5px solid transparent;
   box-shadow: 0 1em 1em rgba(44, 58, 58, 0.2);
   background-color: var(--clr-neutral-100);
+  transition: border-color 200ms;
+}
+.card:focus-within, .card:hover {
+  border-left: 5px solid var(--clr-primary-100);
 }
 @media (min-width: 50em) {
   .card {
@@ -314,6 +320,7 @@ h3 a:hover {
   position: relative;
   padding: 0.5em 0.75em;
   background-color: rgba(91, 164, 164, 0.15);
+  transition: all 200ms;
   font-size: var(--step--1);
   font-weight: 700;
   line-height: 1rem;
@@ -358,15 +365,15 @@ h3 a:hover {
   align-items: center;
   padding-right: 3.5em;
 }
-.filters svg {
+.filters img {
   position: absolute;
   right: 0;
-  width: 2.5em;
   height: 100%;
+  padding: 0.5em;
   background-color: var(--clr-primary-100);
   pointer-events: none;
 }
-.filters label:hover svg {
+.filters label:hover img {
   background-color: var(--clr-neutral-600);
 }
 .filters button {
