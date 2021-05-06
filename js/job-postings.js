@@ -1,9 +1,34 @@
 import { postingsData } from "./postings-data.js";
 
+/* =================== Variables ====================== */
+/* ==================================================== */
+
 const postingContainer = document.querySelector(".postings");
 const activeFilters = document.querySelector(".active-filters");
 const filterContainer = document.querySelector(".filters");
+const filters = [];
 
+/* =================== Functions ====================== */
+/* ==================================================== */
+
+/* Helper Functions
+/* ==================================================== */
+
+/**
+ * Check if any value on one array matches any value in another
+ * @param      {Array}   	array   The array of values
+ * @param      {Array}  	target  The array being checked
+ * @return     {Boolean}
+ */
+const checker = (array, target) => target.every((value) => array.includes(value));
+
+/* App Functions
+/* ==================================================== */
+
+/**
+ * Render the list of filtered jobs to the HTML
+ * @param      {Array}  postings  The array of selected filters
+ */
 function renderPostings(postings) {
 	postingContainer.innerHTML = postings
 		.map(function (post, index) {
@@ -54,16 +79,18 @@ function renderPostings(postings) {
 		.join("");
 }
 
-const filters = [];
-const checker = (array, target) => target.every((value) => array.includes(value));
-
+/**
+ * Render the filter values to the HTML
+ * @param      {Array}  filtersToRender  The array of filter values
+ */
 function renderFilters(filtersToRender) {
+	// Check if there are filter values
 	if (filtersToRender.length >= 1) {
 		filterContainer.style.display = "flex";
 	} else {
 		filterContainer.style.display = "none";
 	}
-
+	// Render the HTML
 	activeFilters.innerHTML = filtersToRender
 		.map(function (filter, index) {
 			return `<label for="active-${filter}-${index}"
@@ -75,10 +102,15 @@ function renderFilters(filtersToRender) {
 		.join("");
 }
 
-function filterPostings() {
+/**
+ * Iterate through the job postings array to find filter matches
+ */
+function filterPostings(arrayToCheck) {
 	const filterdPostingsData = [];
-	postingsData.forEach(function (post) {
+	arrayToCheck.forEach(function (post) {
+		// Flatten object into array of values
 		const values = Object.values(post).flat();
+		// Check if any values match, if so push to new array
 		if (checker(values, filters)) {
 			filterdPostingsData.push(post);
 		}
@@ -86,6 +118,10 @@ function filterPostings() {
 	renderPostings(filterdPostingsData);
 }
 
+/**
+ * Create an array of values to filter jobs against
+ * @param      {Object}  event   The event object
+ */
 function updateFilters(event) {
 	const filter = Object.entries(event.target.dataset)[0][1];
 	if (filters.includes(filter)) {
@@ -94,9 +130,12 @@ function updateFilters(event) {
 	} else {
 		filters.push(filter);
 	}
-	filterPostings();
+	filterPostings(postingsData);
 	renderFilters(filters);
 }
+
+/* ============  Inits and Event Listeners  =========== */
+/* ==================================================== */
 
 document.addEventListener("change", updateFilters);
 renderPostings(postingsData);
