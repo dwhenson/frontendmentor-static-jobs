@@ -25,7 +25,8 @@ main {
 	margin-bottom: 8rem;
 }
 
-h3 a {
+a {
+	transition: color 2000ms;
 	font-size: var(--step-1);
 	text-decoration: none;
 	color: var(--clr-neutral-500);
