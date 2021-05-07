@@ -15,10 +15,11 @@
 		<header class="header"></header>
 		<main class="container flow-content">
 			<form class="filters form container">
-				<fieldset class="active-filters split" aria-live="true"></fieldset>
+				<fieldset class="active-filters split" aria-live="polite"></fieldset>
+				<legend class="visually-hidden">Active Filters</legend>
 				<button>Clear</button>
 			</form>
-			<ul class="postings container flow-content" role="list">
+			<ul class="postings container flow-content" aria-live="polite" role="list">
 				<p>Fetching job postings....</p>
 			</ul>
 		</main>
