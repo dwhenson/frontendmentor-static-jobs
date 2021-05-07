@@ -21,5 +21,12 @@ module.exports = {
 		"no-param-reassign": [2, { props: false }],
 		"no-return-assign": [2, "except-parens"],
 		"import/extensions": ["warn", "always"],
+		"no-unused-expressions": [
+			"error",
+			{
+				allowShortCircuit: true,
+				allowTernary: true,
+			},
+		],
 	},
 };
