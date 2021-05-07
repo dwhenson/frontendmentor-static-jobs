@@ -22,6 +22,7 @@
 
 	img {
 		position: absolute;
+		top: 0;
 		right: 0;
 		height: 100%;
 		padding: 0.5em;
@@ -34,6 +35,7 @@
 	}
 
 	button {
+		padding-top: 0.35em;
 		border: none;
 		background-color: transparent;
 		font-size: var(--step--1);

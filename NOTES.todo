@@ -26,8 +26,8 @@ STEPS (1):
 		✔	Fix position of X inside SVG @critical @done (21-05-06 20:17)
 		✔	Refactor JS to focus on data-attributes not ids @critical @done (21-05-06 20:52)
 		✔	Add transition for background property - only (not all) @done (21-05-06 20:59)
-		☐	Set all checkboxes with the same value as checked? @high
-		☐	Refactor CSS to avoid label repetition @high
+		✔	Set all checkboxes with the same value as checked? @high @done (21-05-06 22:00)
+		✔	Refactor CSS to avoid label repetition @high @done (21-05-06 21:12)
 		☐	Write read me @high
 		✔	Check if forms need a label @done (21-05-06 20:17)
 		✔	Check todo list items @done (21-05-03 10:11)

@@ -277,7 +277,7 @@ a:hover {
 .card .highlight,
 .card .promoted {
   display: inline-block;
-  padding: 0.5em 0.75em;
+  padding: 0.6em 0.75em 0.3em;
   border-radius: 1em;
   font-size: var(--step--1);
   font-weight: 700;
@@ -318,7 +318,7 @@ a:hover {
 }
 .form label {
   position: relative;
-  padding: 0.5em 0.75em;
+  padding: 0.5em 0.75em 0.25em;
   background-color: rgba(91, 164, 164, 0.15);
   transition: all 200ms;
   font-size: var(--step--1);
@@ -367,6 +367,7 @@ a:hover {
 }
 .filters img {
   position: absolute;
+  top: 0;
   right: 0;
   height: 100%;
   padding: 0.5em;
@@ -377,6 +378,7 @@ a:hover {
   background-color: var(--clr-neutral-600);
 }
 .filters button {
+  padding-top: 0.35em;
   border: none;
   background-color: transparent;
   font-size: var(--step--1);
