@@ -6,7 +6,8 @@ import { postingsData } from "./postings-data.js";
 const postingContainer = document.querySelector(".postings");
 const activeFilters = document.querySelector(".active-filters");
 const filterContainer = document.querySelector(".filters");
-const filters = [];
+const clear = document.querySelector(".clear");
+let filters = [];
 
 /* =================== Functions ====================== */
 /* ==================================================== */
@@ -46,7 +47,7 @@ function renderPostings(postings) {
 						<p class="time">${post.contract}</p>
 						<p class="location">${post.location}</p>
 					</div>
-					<form class="form split">
+					<div class="form split">
 						<fieldset class="split">
 							<legend class="visually-hidden">Filter by: Level</legend>
 							<label for="${post.level}-${index}"
@@ -72,32 +73,9 @@ function renderPostings(postings) {
 								})
 								.join("")}
 						</fieldset>
-					</form>
+					</div>
 				</li>
 			</ul> `;
-		})
-		.join("");
-}
-
-/**
- * Render the filter values to the HTML
- * @param      {Array}  filtersToRender  The array of filter values
- */
-function renderFilters(filtersToRender) {
-	// Check if there are filter values
-	if (filtersToRender.length >= 1) {
-		filterContainer.style.display = "flex";
-	} else {
-		filterContainer.style.display = "none";
-	}
-	// Render the HTML
-	activeFilters.innerHTML = filtersToRender
-		.map(function (filter, index) {
-			return `<label for="active-${filter}-${index}"
-				>${filter}
-				<input data-filter="${filter}" id="active-${filter}-${index}" type="checkbox" checked/>
-				<img src="./images/icon-remove.svg" alt="remove">
-			</label>`;
 		})
 		.join("");
 }
@@ -128,6 +106,35 @@ function checkCheckboxes(values) {
 		inputs.forEach(function (input) {
 			input.checked ? (input.checked = false) : (input.checked = true);
 		});
+	});
+}
+
+/**
+ * Render the filter values to the HTML
+ * @param      {Array}  filtersToRender  The array of filter values
+ */
+function renderFilters(filtersToRender) {
+	// Check if there are filter values
+	if (filtersToRender.length >= 1) {
+		filterContainer.style.display = "flex";
+	} else {
+		filterContainer.style.display = "none";
+	}
+	// Render the HTML
+	activeFilters.innerHTML = filtersToRender
+		.map(function (filter, index) {
+			return `<label for="active-${filter}-${index}"
+				>${filter}
+				<input data-filter="${filter}" id="active-${filter}-${index}" type="checkbox" checked/>
+				<img src="./images/icon-remove.svg" alt="remove">
+			</label>`;
+		})
+		.join("");
+	clear.addEventListener("click", function () {
+		filters.length = 0;
+		filterPostings(postingsData);
+		renderFilters(filters);
+		checkCheckboxes(filters);
 	});
 }
 
