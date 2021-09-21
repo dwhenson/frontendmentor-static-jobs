@@ -22,6 +22,7 @@ h2 {
 }
 
 main {
+	position: relative;
 	margin-bottom: 8rem;
 }
 
@@ -47,6 +48,7 @@ a {
 @import "utilities/visually-hidden";
 @import "utilities/outline";
 @import "utilities/split";
+// @import "utilities/I dont exist and will fall";
 
 /* ==================================================
    Blocks
@@ -56,3 +58,4 @@ a {
 @import "blocks/job-card";
 @import "blocks/form";
 @import "blocks/filter";
+@import "blocks/postings";

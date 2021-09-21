@@ -146,7 +146,7 @@
       "eSQ" : 1,
       "ft" : 4096,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/design\/specs.html",
       "oF" : 0,
       "oFM" : 0,
@@ -165,7 +165,7 @@
       "eSQ" : 1,
       "ft" : 4096,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/design\/style-guide.html",
       "oF" : 0,
       "oFM" : 0,
@@ -378,12 +378,12 @@
       "oAP" : "\/node_modules",
       "oF" : 0
     },
-    "\/NOTES.todo" : {
+    "\/notes.todo" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/NOTES.todo",
+      "oAP" : "\/notes.todo",
       "oF" : 0
     },
     "\/package-lock.json" : {
@@ -411,7 +411,7 @@
       "eSQ" : 1,
       "ft" : 4096,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/README.html",
       "oF" : 0,
       "oFM" : 0,
@@ -506,6 +506,20 @@
       "sct" : 0
     },
     "\/scss\/blocks\/_job-card.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/scss\/css\/styles.css",
+      "oF" : 0,
+      "oS" : 1,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/scss\/blocks\/_postings.scss" : {
       "aP" : 0,
       "bl" : 0,
       "dP" : 10,
@@ -2546,7 +2560,7 @@
       "strictUnits" : 0
     },
     "languageDefaultsMARKDOWN" : {
-      "autoOutputAction" : 0,
+      "autoOutputAction" : 1,
       "autoOutputPathFilenamePattern" : "*.html",
       "autoOutputPathRelativePath" : "",
       "autoOutputPathReplace1" : "",

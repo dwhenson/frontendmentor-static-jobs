@@ -7,7 +7,7 @@ const postingContainer = document.querySelector(".postings");
 const activeFilters = document.querySelector(".active-filters");
 const filterContainer = document.querySelector(".filters");
 const clear = document.querySelector(".clear");
-let filters = [];
+const filters = [];
 
 /* =================== Functions ====================== */
 /* ==================================================== */
@@ -34,7 +34,7 @@ function renderPostings(postings) {
 	postingContainer.innerHTML = postings
 		.map(function (post, index) {
 			return `
-				<li class="card container">
+				<li class="card container" style="--duration: ${index * 250}ms">
 					<img class="logo" src="${post.logo}" alt="${post.company} Logo" />
 					<div class="split">
 						<h2>${post.company}</h2>
@@ -130,6 +130,7 @@ function renderFilters(filtersToRender) {
 			</label>`;
 		})
 		.join("");
+	// Listen on clear button and reset filters
 	clear.addEventListener("click", function () {
 		filters.length = 0;
 		filterPostings(postingsData);

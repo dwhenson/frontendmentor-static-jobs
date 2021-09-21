@@ -111,6 +111,7 @@ select {
   --step-1: clamp(1.05rem, 0.98rem + 0.3vw, 1.25rem);
   /* Font-families */
   --ff-body: "Spartan", sans-serif;
+  --duration: 0;
 }
 
 /* Base Styles
@@ -127,6 +128,7 @@ h2 {
 }
 
 main {
+  position: relative;
   margin-bottom: 8rem;
 }
 
@@ -171,7 +173,7 @@ a:hover {
 
 /* Add vertical rhythm inside elements */
 .flow-content > * + * {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 /* Text accessible only for screen readers */
@@ -242,6 +244,7 @@ a:hover {
 /* 	Job Card
    	================================================== */
 .card {
+  position: relative;
   display: grid;
   grid-template-rows: repeat(4, auto);
   align-items: center;
@@ -249,12 +252,39 @@ a:hover {
   padding-top: clamp(0.5rem, 2.5%, 2rem);
   padding-bottom: clamp(0.5rem, 2.5%, 2rem);
   border-left: 5px solid transparent;
-  box-shadow: 0 1em 1em rgba(44, 58, 58, 0.2);
+  box-shadow: 0 0.5em 0.5em rgba(44, 58, 58, 0.2);
   background-color: var(--clr-neutral-100);
-  transition: border-color 200ms;
+  transition: border-color 150ms ease-in;
+  animation: fadeIn var(--duration);
 }
-.card:focus-within, .card:hover {
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  box-shadow: 0 4em 4em rgba(88, 116, 116, 0.2);
+  transition: opacity 350ms ease-in-out;
+}
+.card:hover, .card:focus-within {
   border-left: 5px solid var(--clr-primary-100);
+}
+.card:hover::before, .card:focus-within::before {
+  opacity: 1;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-1em);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 @media (min-width: 50em) {
   .card {
@@ -320,7 +350,7 @@ a:hover {
   position: relative;
   padding: 0.5em 0.75em 0.25em;
   background-color: rgba(91, 164, 164, 0.15);
-  transition: all 200ms;
+  transition: background-color 250ms ease-out, color 350ms ease-out;
   font-size: var(--step--1);
   font-weight: 700;
   line-height: 1rem;
@@ -348,11 +378,13 @@ a:hover {
 /* 	Filter
    	================================================== */
 .filters {
+  position: absolute;
   display: none;
+  right: clamp(1rem, 5%, 4rem);
+  left: clamp(1rem, 5%, 4rem);
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  width: 100%;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   box-shadow: 0 1em 1em rgba(44, 58, 58, 0.2);
@@ -387,4 +419,10 @@ a:hover {
 }
 .filters button:hover {
   text-decoration: underline;
+}
+
+/* 	Postings
+   	================================================== */
+.postings {
+  margin-top: 6rem;
 }

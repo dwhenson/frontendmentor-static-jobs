@@ -2,6 +2,7 @@
    	================================================== */
 
 .card {
+	position: relative;
 	display: grid;
 	grid-template-rows: repeat(4, auto);
 	align-items: center;
@@ -9,13 +10,46 @@
 	padding-top: clamp(0.5rem, 2.5%, 2rem);
 	padding-bottom: clamp(0.5rem, 2.5%, 2rem);
 	border-left: 5px solid transparent;
-	box-shadow: 0 1em 1em hsla(180, 14%, 20%, 0.2);
+	box-shadow: 0 0.5em 0.5em hsla(180, 14%, 20%, 0.2);
 	background-color: var(--clr-neutral-100);
-	transition: border-color 200ms;
+	transition: border-color 150ms ease-in;
+	animation: fadeIn var(--duration);
 
-	&:focus-within,
-	&:hover {
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+		box-shadow: 0 4em 4em hsla(180, 14%, 40%, 0.2);
+		transition: opacity 350ms ease-in-out;
+	}
+
+	&:hover,
+	&:focus-within {
 		border-left: 5px solid var(--clr-primary-100);
+	}
+
+	&:hover::before,
+	&:focus-within::before {
+		opacity: 1;
+	}
+
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+			transform: translateY(-1em);
+		}
+
+		80% {
+			opacity: 1;
+		}
+
+		100% {
+			transform: translateY(0);
+		}
 	}
 
 	@include respond-to("medium") {

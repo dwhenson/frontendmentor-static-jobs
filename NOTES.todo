@@ -1,34 +1,6 @@
-GOAL:
-Render all jobs from data provided. Add filter based on checkbox selected that shows all jobs with that value, and removes filter when checked again. When filter is active add filtered values to top with option for removing filter there too.
+TODO
 
-STEPS (1):
- ✔ On page load Get array and map over items to render items to HTML @done (21-04-29 20:44)
-
- STEPS (2):
-	# Set up filter
-	✔ Add event listener to document to listen for 'changes' @done (21-04-30 15:22)
-	✔	Create an empty array to hold filter values @done (21-04-30 15:24)
-	✔	On change, get data-xxx and value @done (21-05-01 14:50)
-	✔	Check if xxx and value is in array, if so remove, if not add @done (21-05-01 14:50)
-	✔	Compare the filter array against the jobs array, and filter only matches??? @done (21-05-01 14:50)
-	✔	Pass the new matched array to the render function and render @done (21-05-01 14:50)
-
-	STEPS (3):
-	# Create filter UI:
-	✔ Pass filter array to new renderFilters function @done (21-05-02 08:18)
-	✔	ID element to insert filters to - fieldset? @done (21-05-02 08:18)
-	✔	Work out template literal @done (21-05-02 08:18)
-	✔	Check clear button reverts to initial state - removes all filters @done (21-05-02 16:30)
-	✔	Sort out header jank - swap to data- from id to avoid duplicates @done (21-05-02 16:30)
-	✔	Create buttons for each filter with 'remove' or uncheck? - render? @done (21-05-03 09:56)
-
-	FINAL BITS:
-		✔	Fix position of X inside SVG @critical @done (21-05-06 20:17)
-		✔	Refactor JS to focus on data-attributes not ids @critical @done (21-05-06 20:52)
-		✔	Add transition for background property - only (not all) @done (21-05-06 20:59)
-		✔	Set all checkboxes with the same value as checked? @high @done (21-05-06 22:00)
-		✔	Refactor CSS to avoid label repetition @high @done (21-05-06 21:12)
-		☐	Write read me @high
-		✔	Check if forms need a label @done (21-05-06 20:17)
-		✔	Check todo list items @done (21-05-03 10:11)
+- Add hover transistions to filtered values, including close buttons
+-	Add transistions to appearing/disappearing cards
+- Improve performance of boxs shadow transistions
 
