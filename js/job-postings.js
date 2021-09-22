@@ -34,7 +34,8 @@ function renderPostings(postings) {
 	postingContainer.innerHTML = postings
 		.map(function (post, index) {
 			return `
-				<li class="card container" style="--delay: ${index * 50}ms">
+				<li class="card" style="--delay: ${index * 50}ms">
+					<div class="card-inner container">
 					<img class="logo" src="${post.logo}" alt="${post.company} Logo" />
 					<div class="split">
 						<h2>${post.company}</h2>
@@ -74,6 +75,7 @@ function renderPostings(postings) {
 								.join("")}
 						</fieldset>
 					</div>
+					<div>
 				</li>
 			</ul> `;
 		})
