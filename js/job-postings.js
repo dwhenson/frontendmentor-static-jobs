@@ -34,7 +34,7 @@ function renderPostings(postings) {
 	postingContainer.innerHTML = postings
 		.map(function (post, index) {
 			return `
-				<li class="card container" style="--duration: ${index * 250}ms">
+				<li class="card container" style="--delay: ${index * 50}ms">
 					<img class="logo" src="${post.logo}" alt="${post.company} Logo" />
 					<div class="split">
 						<h2>${post.company}</h2>

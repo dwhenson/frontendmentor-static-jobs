@@ -15,6 +15,7 @@
 	label {
 		position: relative;
 		padding: 0.5em 0.75em 0.25em;
+		box-shadow: 0;
 		background-color: hsla(180, 29%, 50%, 0.15);
 		transition: background-color 250ms ease-out, color 350ms ease-out;
 		font-size: var(--step--1);
@@ -31,6 +32,23 @@
 		&:focus-within {
 			outline: 5px dotted var(--clr-primary-100);
 			outline-offset: 0.25rem;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			opacity: 0;
+			box-shadow: 0 0.5em 0.75em hsla(180, 14%, 40%, 0.3);
+			transition: opacity 100ms ease-in-out;
+		}
+
+		&:hover::before,
+		&:focus-within::before {
+			opacity: 1;
 		}
 	}
 
