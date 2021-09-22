@@ -17,7 +17,7 @@
 		padding: 0.5em 0.75em 0.25em;
 		box-shadow: 0;
 		background-color: hsla(180, 29%, 50%, 0.15);
-		transition: background-color 250ms ease-out, color 350ms ease-out;
+		transition: background-color 250 ease-out, color 300ms ease-out, transform 250ms cubic-bezier(0, 0.26, 0.13, 1.55);
 		font-size: var(--step--1);
 		font-weight: 700;
 		line-height: 1rem;
@@ -26,6 +26,7 @@
 
 		&:hover {
 			background-color: var(--clr-primary-100);
+			transform: scale(1.05);
 			color: var(--clr-neutral-100);
 		}
 

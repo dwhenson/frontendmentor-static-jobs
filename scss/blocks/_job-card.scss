@@ -13,8 +13,8 @@
 	border-left: 5px solid transparent;
 	box-shadow: 0 0.5em 0.5em hsla(180, 14%, 20%, 0.1);
 	background-color: var(--clr-neutral-100);
-	transition: border-color 100ms ease-in;
-	animation: fadeIn 150ms var(--delay) forwards;
+	transition: border-color 150ms ease-out, transform 150ms cubic-bezier(0, 0.26, 0.13, 1.55);
+	animation: fadeIn linear 150ms var(--delay) forwards;
 
 	&::before {
 		content: "";
@@ -25,12 +25,13 @@
 		left: 0;
 		opacity: 0;
 		box-shadow: 0 2em 2em hsla(180, 14%, 40%, 0.2);
-		transition: opacity 100ms ease-in-out;
+		transition: opacity 100ms ease-out;
 	}
 
 	&:hover,
 	&:focus-within {
 		border-left: 5px solid var(--clr-primary-100);
+		transform: scale(1.05);
 	}
 
 	&:hover::before,
