@@ -3,6 +3,7 @@
 
 .card {
 	animation: fadeIn linear 150ms var(--delay) both;
+	cursor: pointer;
 
 	@keyframes fadeIn {
 		0% {
@@ -27,7 +28,7 @@
 		border-left: 5px solid transparent;
 		box-shadow: 0 0.5em 0.5em hsla(180, 14%, 20%, 0.1);
 		background-color: var(--clr-neutral-100);
-		transition: border-color 150ms ease-out, transform 150ms cubic-bezier(0, 0.26, 0.13, 1.55);
+		transition: border-color 400ms ease-out, transform 400ms cubic-bezier(0, 0.26, 0.13, 1.55);
 
 		@include respond-to("medium") {
 			grid-template-rows: repeat(3, auto);
@@ -44,7 +45,7 @@
 			left: 0;
 			opacity: 0;
 			box-shadow: 0 2em 2em hsla(180, 14%, 40%, 0.2);
-			transition: opacity 100ms ease-out;
+			transition: opacity 400ms ease-out;
 		}
 
 		&:hover,
