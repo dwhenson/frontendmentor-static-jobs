@@ -36,14 +36,6 @@
       "oAP" : "\/.gitignore",
       "oF" : 0
     },
-    "\/.prettierrc.json" : {
-      "ft" : 524288,
-      "oA" : 1,
-      "oAP" : "\/.prettierrc-min.json",
-      "oF" : 0,
-      "oO" : 1,
-      "oS" : 1
-    },
     "\/.stylelintrc.json" : {
       "ft" : 524288,
       "oA" : 1,

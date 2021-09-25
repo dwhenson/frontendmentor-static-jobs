@@ -1,6 +1,6 @@
 /* ==================================================
-	 Andy Bell Modern CSS Reset
-	 ================================================== */
+   Andy Bell Modern CSS Reset
+   ================================================== */
 /* Box sizing rules */
 *,
 *::before,
@@ -35,8 +35,8 @@ h3,
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role="list"],
+ol[role="list"] {
   padding-right: 0;
   padding-left: 0;
   list-style: none;
@@ -62,11 +62,13 @@ picture {
 
 img[width] {
   width: auto;
+
   /* Defer to max-width */
 }
 
 img[width][height] {
   height: auto;
+
   /* Preserve aspect ratio */
 }
 
@@ -81,19 +83,20 @@ select {
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
   }
 }
+
 /* ==================================================
-	Global Styles
-	================================================== */
-/* 	Custom Properties
-   	================================================== */
+  Global Styles
+  ================================================== */
+/*  Custom Properties
+    ================================================== */
 :root {
   /* Colors */
   --clr-primary-100: hsla(180, 29%, 50%, 1);
@@ -103,12 +106,15 @@ select {
   --clr-neutral-400: hsla(180, 8%, 52%, 1);
   --clr-neutral-500: hsla(180, 14%, 20%, 1);
   --clr-neutral-600: hsla(0, 0%, 0%, 1);
+
   /* Spacing */
   --spacer: 1rem;
+
   /* Font sizes */
   --step--1: clamp(0.73rem, 0.7rem + 0.11vw, 0.8rem);
   --step-0: clamp(0.88rem, 0.83rem + 0.19vw, 1rem);
   --step-1: clamp(1.05rem, 0.98rem + 0.3vw, 1.25rem);
+
   /* Font-families */
   --ff-body: "Spartan", sans-serif;
   --duration: 0;
@@ -138,19 +144,21 @@ a {
   text-decoration: none;
   color: var(--clr-neutral-500);
 }
+
 a:hover {
   color: var(--clr-primary-100);
 }
 
 /* ==================================================
-	Utilities
-	================================================== */
+  Utilities
+  ================================================== */
 /* Center main content on page */
 .center-content {
   display: grid;
   grid-template-rows: min-content;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1440px) minmax(0, 1fr);
 }
+
 .center-content > * {
   grid-column: 2;
 }
@@ -165,6 +173,7 @@ a:hover {
 .flow-section > * + * {
   margin-top: 3rem;
 }
+
 @media (min-width: 50em) {
   .flow-section > * + * {
     margin-top: 2rem;
@@ -194,6 +203,7 @@ a:hover {
   top: 5px;
   left: 5px;
   z-index: 100000;
+
   /* Above WP toolbar */
   width: auto;
   height: auto;
@@ -222,16 +232,16 @@ a:hover {
 /* Align flex children at small and large viewports */
 .split {
   display: flex;
-  gap: var(--spacer);
   flex-wrap: wrap;
   align-items: baseline;
+  gap: var(--spacer);
 }
 
 /* ==================================================
    Blocks
    ================================================== */
-/* 	Header
-   	================================================== */
+/*  Header
+    ================================================== */
 .header {
   grid-column: 1/-1;
   padding-top: 8rem;
@@ -241,22 +251,25 @@ a:hover {
   background-repeat: no-repeat;
 }
 
-/* 	Job Card
-   	================================================== */
+/*  Job Card
+    ================================================== */
 .card {
   animation: fadeIn linear 150ms var(--delay) both;
   cursor: pointer;
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
     transform: translateY(-1em);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .card .card-inner {
   position: relative;
   display: grid;
@@ -268,8 +281,10 @@ a:hover {
   border-left: 5px solid transparent;
   box-shadow: 0 0.5em 0.5em rgba(44, 58, 58, 0.1);
   background-color: var(--clr-neutral-100);
-  transition: border-color 400ms ease-out, transform 400ms cubic-bezier(0, 0.26, 0.13, 1.55);
+  transition: border-color 400ms ease-out,
+    transform 400ms cubic-bezier(0, 0.26, 0.13, 1.55);
 }
+
 @media (min-width: 50em) {
   .card .card-inner {
     grid-template-rows: repeat(3, auto);
@@ -277,6 +292,7 @@ a:hover {
     grid-auto-flow: column;
   }
 }
+
 .card .card-inner::before {
   content: "";
   position: absolute;
@@ -288,17 +304,23 @@ a:hover {
   box-shadow: 0 2em 2em rgba(88, 116, 116, 0.2);
   transition: opacity 400ms ease-out;
 }
-.card .card-inner:hover, .card .card-inner:focus-within {
+
+.card .card-inner:hover,
+.card .card-inner:focus-within {
   border-left: 5px solid var(--clr-primary-100);
   transform: scale(1.025);
 }
-.card .card-inner:hover::before, .card .card-inner:focus-within::before {
+
+.card .card-inner:hover::before,
+.card .card-inner:focus-within::before {
   opacity: 1;
 }
+
 .card .card-inner .logo {
   max-width: 3rem;
   margin-top: -1.5rem;
 }
+
 @media (min-width: 50em) {
   .card .card-inner .logo {
     grid-area: 1/1/-1/2;
@@ -306,6 +328,7 @@ a:hover {
     margin-top: 0;
   }
 }
+
 .card .highlight,
 .card .promoted {
   display: inline-block;
@@ -317,17 +340,21 @@ a:hover {
   text-transform: uppercase;
   color: var(--clr-neutral-100);
 }
+
 .card .highlight {
   background-color: var(--clr-primary-100);
 }
+
 .card .promoted {
   background-color: var(--clr-neutral-600);
 }
+
 .card .age,
 .card .time,
 .card .location {
   color: var(--clr-neutral-400);
 }
+
 @media (min-width: 50em) {
   .card .form {
     grid-area: 1/-2/-1/-1;
@@ -339,35 +366,42 @@ a:hover {
 .form {
   gap: 0.5rem;
 }
+
 @media (min-width: 50em) {
   .form {
     justify-content: flex-end;
   }
 }
+
 .form fieldset {
   padding: 0;
   border: none;
 }
+
 .form label {
   position: relative;
   padding: 0.5em 0.75em 0.25em;
   background-color: rgba(91, 164, 164, 0.15);
-  transition: background-color 250ms ease-out, color 300ms ease-out, transform 250ms cubic-bezier(0, 0.26, 0.13, 1.55);
+  transition: background-color 250ms ease-out, color 300ms ease-out,
+    transform 250ms cubic-bezier(0, 0.26, 0.13, 1.55);
   font-size: var(--step--1);
   font-weight: 700;
   line-height: 1rem;
   color: var(--clr-primary-100);
   cursor: pointer;
 }
+
 .form label:hover {
   background-color: var(--clr-primary-100);
   transform: scale(1.05);
   color: var(--clr-neutral-100);
 }
+
 .form label:focus-within {
   outline: 5px dotted var(--clr-primary-100);
   outline-offset: 0.25rem;
 }
+
 .form label::before {
   content: "";
   position: absolute;
@@ -379,9 +413,12 @@ a:hover {
   box-shadow: 0 0.5em 0.75em rgba(88, 116, 116, 0.3);
   transition: opacity 250ms ease-in-out;
 }
-.form label:hover::before, .form label:focus-within::before {
+
+.form label:hover::before,
+.form label:focus-within::before {
   opacity: 1;
 }
+
 .form input {
   position: absolute;
   top: 0;
@@ -392,8 +429,8 @@ a:hover {
   cursor: pointer;
 }
 
-/* 	Filter
-   	================================================== */
+/*  Filter
+    ================================================== */
 .filters {
   position: absolute;
   display: none;
@@ -408,13 +445,16 @@ a:hover {
   background-color: var(--clr-neutral-100);
   transform: translateY(-50%);
 }
+
 .filters label {
   position: relative;
   display: flex;
   align-items: center;
   padding-right: 3.5em;
-  transition: background-color 250 ease-out, color 300ms ease-out, transform 250ms cubic-bezier(0, 0.26, 0.13, 1.55);
+  transition: background-color 250 ease-out, color 300ms ease-out,
+    transform 250ms cubic-bezier(0, 0.26, 0.13, 1.55);
 }
+
 .filters img {
   position: absolute;
   top: 0;
@@ -425,9 +465,11 @@ a:hover {
   transition: background-color 150ms ease-out;
   pointer-events: none;
 }
+
 .filters label:hover img {
   background-color: var(--clr-neutral-600);
 }
+
 .filters button {
   padding-top: 0.35em;
   border: none;
@@ -436,12 +478,13 @@ a:hover {
   color: var(--clr-primary-100);
   cursor: pointer;
 }
+
 .filters button:hover {
   text-decoration: underline;
 }
 
-/* 	Postings
-   	================================================== */
+/*  Postings
+    ================================================== */
 .postings {
   margin-top: 6rem;
 }
